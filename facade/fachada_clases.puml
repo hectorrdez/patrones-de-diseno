@@ -1,0 +1,36 @@
+@startuml class
+class Fabrica{
+    - GestorProducto gestorProducto
+    - GestorInventario gestorInventario
+    - ProcesadorPagos procesadorPagos
+    - Producto[] Producto
+    + void CrearPedido(idProducto : String,cantidadProducto : int, metodoPago : String,  cantidadPago : double)
+}
+class ProcesadorPagos{
+    + void procesoPago(metodoPago : String, cantidad : double, precioAPagar : double)
+}
+class GestorInventario{
+    + Resultado actualizarInvetario(idProducto : String, cantidad : int, inventario : Producto[])
+}
+class GestorProducto{
+    + void revisarDisponibilidad(idProducto : String,  inventario : Producto[])
+}
+class Producto{
+    - String Id;
+    - String Nombre;
+    - double Precio;
+    + String GetId();
+    + String GetNombre();
+    + double GetPrecio();
+}
+class Resultado{
+    - Producto[] Inventario;
+    - double precio;
+    + Producto[] GetInventario();
+    + double GetPrecio();
+}
+Fabrica *-- ProcesadorPagos
+Fabrica *-- GestorInventario
+Fabrica *-- GestorProducto
+Fabrica o-- Producto
+@enduml

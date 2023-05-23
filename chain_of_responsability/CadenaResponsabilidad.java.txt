@@ -1,0 +1,34 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package javaapplication2;
+
+/**
+ *
+ * @author Hector Rodriguez Tovar
+ */
+public class CadenaResponsabilidad {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Empleado cocinero = new Cocinero();
+        Empleado camarero = new Camarero();
+        cocinero.SetSiguiente(camarero);
+        
+        String tipo = "Cocina";
+        String descripcion = "Pollo al horno con patatas";
+        Solicitud solicitud = new Solicitud(tipo, descripcion);
+        
+        cocinero.ManejarSolicitud(solicitud);
+       
+        tipo = "LLevar comida";
+        descripcion = "Pollo al horno con patatas";
+        solicitud = new Solicitud(tipo, descripcion);
+        
+        cocinero.ManejarSolicitud(solicitud);
+    }
+    
+}

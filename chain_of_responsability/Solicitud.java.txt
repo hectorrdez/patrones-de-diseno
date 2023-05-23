@@ -1,0 +1,24 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package javaapplication2;
+
+/**
+ *
+ * @author Hector Rodriguez Tovar
+ */
+public class Solicitud {
+    private String tipo;
+    private String descripcion;
+    public Solicitud(String tipo, String descripcion){
+        this.tipo = tipo;
+        this.descripcion = descripcion;
+    }
+    public String GetTipo(){
+        return this.tipo;
+    }
+    public String GetDescripcion(){
+        return this.descripcion;
+    }
+}

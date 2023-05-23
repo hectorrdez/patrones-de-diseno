@@ -1,0 +1,32 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package javaapplication1;
+
+/**
+ *
+ * @author Hector Rodriguez Tovar
+ */
+public class Fabrica {
+    private GestorProducto gestorProducto;
+    private GestorInventario gestorInventario;
+    private ProcesadorPagos procesadorPagos;
+    private Producto[] Inventario;
+    public Fabrica(){
+        this.gestorProducto = new GestorProducto();
+        this.gestorInventario = new GestorInventario();
+        this.procesadorPagos = new ProcesadorPagos();
+        this.Inventario = new Producto[]{
+            new Producto("abc", "patatas fritas", 10.0),
+            new Producto("abc", "patatas fritas", 10.0),
+            new Producto("abd", "patatas fritas", 10.0)
+        };
+    }
+    public void CrearPedido(String idProducto, int cantidadProducto, String metodoPago, double cantidadPago) throws Exception{
+        gestorProducto.revisarDisponibilidad(idProducto, this.Inventario);
+        Resultado salida;
+        salida = gestorInventario.actualizarInventario(idProducto, cantidadProducto, this.Inventario);
+        procesadorPagos.procesoPago(metodoPago, cantidadPago, salida.GetPrecio());
+    }
+}

@@ -1,0 +1,28 @@
+@startuml cadena_responsabilidad
+interface Controlador{
+    + SetSiguiente(Controlador siguiente): Void
+    + ManejarSolicitud(Solicitud solicitud): Void
+}
+class Empleado{
+    - Controlador siguiente
+    + SetSiguiente(Controlador siguiente): Void
+    + ManejarSolicitud(Solicitud solicitud): Void
+}
+class Camarero{
+    + ManejarSolicitud(Solicitud solicitud): Void
+}
+class Cocinero{
+    + ManejarSolicitud(Solicitud solicitud): Void
+}
+class Solicitud{
+    - String tipo
+    - String descripcion
+    + Solicitud(tipo: String, descripcion: String): Void
+    + GetTipo(): String
+    + GetDescripcion(): String
+}
+
+Empleado -- Controlador :<<implements>>
+Camarero --|> Empleado
+Cocinero --|> Empleado
+@enduml

@@ -1,0 +1,14 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
+ */
+package javaapplication2;
+
+/**
+ *
+ * @author Hector Rodriguez Tovar
+ */
+public interface Controlador {
+    public void SetSiguiente(Controlador siguiente);
+    public void ManejarSolicitud(Solicitud solicitud);
+}

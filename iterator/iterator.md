@@ -1,7 +1,7 @@
-## PATRON  ITERATOR
-### ¿que es el patron iterator?
+# Iterator
+## ¿que es el patron iterator?
 -Iterator es un patrón de diseño de comportamiento que te permite recorrer elementos de una colección sin exponer su representación subyacente (lista, pila, árbol, etc.).
-### ¿que problemas resuelve?
+## ¿que problemas resuelve?
 -el problema principal que nos resuelve iterator es el de recorrer colecciones de datos, aunque la mayoria de colecciones almacena sus elementos en listas simples hay algunas que se basan en arboles, grafos, pilas y otras estructuras mas complejas de almacenamiento.
 
 siempre ha de hbaer una forma de que un codigo pueda acceder y utilizar esos datos.
@@ -12,12 +12,12 @@ la idea que nos propone el patron iterator es la de implementar un objeto llamad
 normalamente los iteradores aportan un método principal para extraer elementos de la colección. 
 El cliente puede continuar ejecutando este método hasta que no devuelva nada, lo que significa que el iterador ha recorrido todos los elementos.
 
-### ¿como se implementa?
+## ¿como se implementa?
 -Declara la interfaz iteradora, como mínimo, debe tener un método para extraer el siguiente elemento de una colección,Declara la interfaz de colección y describe un método para buscar iteradores, el tipo de retorno debe ser igual al de la interfaz iteradora,Implementa clases iteradoras concretas para las colecciones que quieras que sean recorridas por iteradores,Implementa la interfaz de colección en tus clases de colección. 
 La idea principal es proporcionar al cliente un atajo para crear iteradores personalizados para una clase de colección particular.
-### diagrama de clases
+## diagrama de clases
 ![diagrama](diagrama.jpg)
-### ejemplo funcional 
+## ejemplo funcional 
 
 
 
@@ -87,7 +87,7 @@ public class IteratorExample {
     }
 }
 ```
-### explicacion:
+## explicacion:
 
 1. Se define la interfaz MyIterable<T> que contiene el método iterator().
 
@@ -100,7 +100,7 @@ public class IteratorExample {
 5. El método iterator() de MyCollection<T> devuelve una instancia de MyIterator, que se utiliza para recorrer la colección.
 
 6. En la clase principal IteratorExample, se crea una instancia de MyCollection<String>, se agregan elementos a la colección y luego se utiliza un bucle while junto con el método hasNext() y next() del iterador para recorrer la colección y mostrar cada elemento en la consola.
-### venatajas de iterator
+## venatajas de iterator
 1. Principio de responsabilidad única. Puedes limpiar el código cliente y las colecciones extrayendo algoritmos de recorrido voluminosos y colocándolos en clases independientes.
 
 2. Principio de abierto/cerrado. Puedes implementar nuevos tipos de colecciones e iteradores y pasarlos al código existente sin descomponer nada.
@@ -108,11 +108,11 @@ public class IteratorExample {
 3. Puedes recorrer la misma colección en paralelo porque cada objeto iterador contiene su propio estado de iteración.
 
 4. Por la misma razón, puedes retrasar una iteración y continuar cuando sea necesario.
-### desentajas de iterator
+## desentajas de iterator
 1. Aplicar el patrón puede resultar excesivo si tu aplicación funciona únicamente con colecciones sencillas.
 
 2. Utilizar un iterador puede ser menos eficiente que recorrer directamente los elementos de algunas colecciones especializadas.
-### webgrafia
+## webgrafia
 https://refactoring.guru/es/design-patterns/iterator
 
 https://www.aprenderaprogramar.com/index.php?option=com_content&view=article&id=589:interface-iterable-y-metodo-iterator-api-java-recorrer-colecciones-ejercicio-y-ejemplo-resuelto-cu00915c&catid=58&Itemid=180

@@ -1,0 +1,37 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package javaapplication1;
+
+/**
+ *
+ * @author Hector Rodriguez Tovar
+ */
+public class GestorInventario {
+    public Resultado actualizarInventario(String idProducto, int cantidad, Producto[] inventario) throws Exception{
+        System.out.println("Actualizando inventario para el producto " + idProducto + ", cantidad: " + cantidad);
+        // Logica para actualizar el inventario
+        int cantidadExistente = 0;
+        for(Producto producto: inventario)
+            if(producto.GetId() == idProducto)
+                cantidadExistente++;
+       
+        if(cantidadExistente < cantidad)
+            throw new Exception("No se tiene la cantidad suficiente del producto");
+        Producto[] nuevoInventario = new Producto[inventario.length - cantidad];
+        int cantidadRestante = cantidadExistente - cantidad;
+        int pos = 0;
+        double precio = 0;
+        for(Producto producto: inventario){
+            if(producto.GetId() == idProducto && cantidadRestante <= cantidadExistente){
+                cantidadExistente--;
+            }else{
+                nuevoInventario[pos] = producto;
+                precio = producto.GetPrecio();
+                pos++;
+            }
+        }
+        return new Resultado(nuevoInventario, precio * cantidad );
+    }
+}

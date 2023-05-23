@@ -1,0 +1,24 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package javaapplication1;
+
+/**
+ *
+ * @author Hector Rodriguez Tovar
+ */
+public class Resultado {
+    private Producto[] Inventario;
+    private double precio;
+    public Resultado(Producto[] Inventario, double precio){
+        this.Inventario = Inventario;
+        this.precio = precio;
+    }
+    public Producto[] GetInventario(){
+        return this.Inventario;
+    }
+    public double GetPrecio(){
+        return this.precio;
+    }
+}

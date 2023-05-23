@@ -1,0 +1,19 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package javaapplication2;
+
+/**
+ *
+ * @author Hector Rodriguez Tovar
+ */
+public class Cocinero extends Empleado{
+    public void ManejarSolicitud(Solicitud solicitud){
+        if(solicitud.GetTipo().equals("Cocina")){
+            System.out.println("Cocinero prepara: " + solicitud.GetDescripcion());
+        }else{
+            super.ManejarSolicitud(solicitud);
+        }
+    }
+}

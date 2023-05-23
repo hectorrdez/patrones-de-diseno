@@ -1,0 +1,21 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package javaapplication2;
+
+/**
+ *
+ * @author alumno
+ */
+public class Empleado implements Controlador{
+    private Controlador siguiente;
+    public void SetSiguiente(Controlador siguiente){
+        this.siguiente = siguiente;
+    }
+    public void ManejarSolicitud(Solicitud solicitud){
+        if(siguiente != null){
+            siguiente.ManejarSolicitud(solicitud);
+        }
+    }
+}

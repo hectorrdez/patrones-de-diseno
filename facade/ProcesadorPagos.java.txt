@@ -1,0 +1,18 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package javaapplication1;
+
+/**
+ *
+ * @author Hector Rodriguez Tovar
+ */
+public class ProcesadorPagos {
+    public void procesoPago(String metodoPago, double cantidad, double precioAPagar) throws Exception{
+        System.out.println("Procesando pago de " + cantidad + " a traves de " + metodoPago);
+        if(cantidad < precioAPagar)
+            throw new Exception("No se dispone del dinero suficiente para pagar");
+        System.out.println("El pago se ha realizado con exito. " + (metodoPago == "Efectivo" ? "Se devuelven " + (cantidad-precioAPagar) + " euros" : ""));
+    }
+}
