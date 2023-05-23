@@ -19,6 +19,10 @@ El patron Fachada o _Facade_ en Ingles, es un patrón de diseño estructura por 
 
 Este es el diagrama de clases del ejemplo de la __Fabrica__ propuesto para el uso del patrón _Facade_
 
+## Implementación
+
+Para la implementación de este patrón necesitamos una clase que se encargue de gestionar con un solo metodo toda la solicitud, llamando y ejecutando los metodos correspondientes. En el ejemplo propuesto, esta clase será __Fabrica__ que a traves del metodo __CrearPedido__ gestionara la solicitud del usuario para realizar un pedido.
+
 ## Ventajas y Desventajas
 
 | Ventajas ✔                                                        | Desventajas ❌                                                                                                   |
